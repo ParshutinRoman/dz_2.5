@@ -11,5 +11,4 @@ if not os.path.exists(os.path.join(os.path.abspath(os.path.dirname(__file__)), r
 for file in files:
     inp = os.path.join(os.path.abspath(os.path.dirname(__file__)), source, file)
     output = os.path.join(os.path.abspath(os.path.dirname(__file__)), result, file)
-    with open(output, 'w') as f:
-        subprocess.run('convert.exe convert inp -resize 200 output')
+    subprocess.run(['convert.exe', inp, '-resize', '200', output])
